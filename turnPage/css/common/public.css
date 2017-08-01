@@ -1,0 +1,80 @@
+@charset "UTF-8";
+/**
+* 说明
+* 采用盒子计算模式模型 box-sizing:border-box;
+**/
+/*cssResetBegin  ----------------------------------------*/
+*,*:before,*:after{  -webkit-box-sizing: border-box;  -moz-box-sizing: border-box;-o-box-sizing:border-box;  box-sizing: border-box;/* 设置元素的盒模型为border-box*/  -webkit-text-size-adjust: 100%;  -ms-text-size-adjust: 100%;  text-size-adjust: 100%;/* 使Chrome使用小于12px的字体  */  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* 去除点击元素后的高亮效果 */  -webkit-touch-callout:none; outline: none;}/*IOS中当触摸时候禁用系统默认菜单*/
+html{color:#232823;background-color:#fff;overflow-y:scroll;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%; -webkit-font-smoothing:antialiased;/*使页面上的字体抗锯齿,使用后字体看起来会更清晰舒服*/}
+html,body{font-family:"Helvetica Neue",Helvetica,"Microsoft YaHei",'微软雅黑',arial,sans-serif;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0; font-size: .6rem;}
+
+table{ border-collapse: collapse; border-spacing: 0; border: 0;}
+caption,th{text-align:left}
+fieldset,img{border:0}
+h1,h2,h3,h4,h5,h6,b,strong,th{font-weight: normal; /*取消加粗*/ }
+i, cite, em, var, address, dfn{ font-style: normal;/*取消斜体*/}
+ol,ul,li{list-style:none}
+
+blockquote,q{quotes:none;/*规定引号类型为无*/}
+blockquote:before,blockquote:after,q:before,q:after{content:'';}
+button,input{  -webkit-appearance: none;  -moz-appearance: none;  appearance: none; -webkit-box-shadow:none; box-shadow:none; border: none;}
+a,a:link,a:visited,a:hover,a:active{ color:#232823; }
+a,ins{text-decoration:none}
+sub,sup{font-size:75%;line-height:0;vertical-align:baseline; position: relative;}
+sup{top:-.5em}
+sub{bottom:-.25em}
+/*cssResetEnd  ---------------------------------------*/
+/** 字体大小 文本设置 对齐  字体单位设置为rem 对应放大两倍的设计稿**/
+.f0{ font-size: 0; !important;}.f10{ font-size: .5rem; !important;}  .f12{ font-size: .6rem; !important;}  .f14{ font-size: .7rem; !important;}  .f15{ font-size: .75rem; !important;}  .f16{ font-size: .7rem; !important;}  .f18{ font-size: .9rem; !important;}  .f20{ font-size: 1rem; !important;}  .f22{ font-size: 1.1rem; !important;}  .f24{ font-size: 1.2rem; !important;}  .f26{ font-size: 1.3rem; !important;}  .f28{ font-size: 1.4rem; !important;}  .f30{ font-size: 1.5rem; !important;}  .f32{ font-size: 1.6rem; !important;}  .f34{ font-size: 1.7rem; !important;}  .f36{ font-size: 1.8rem; !important;}  .f38{ font-size: 1.9rem; !important;}  .f40{ font-size: 2rem; !important;}
+.fB{font-weight: bold !important;}.fN{font-weight: normal !important;}.fI{ font-style: italic !important;}
+.txtL{text-align:left!important;}.txtR{text-align:right!important;}  .txtC{text-align:center!important;}
+.txtUnd{ text-decoration: underline !important;}  .txtThr{ text-decoration: line-through !important;}  .txtNone{ text-decoration: none !important;}
+.txtElip{overflow:hidden;white-space:nowrap;text-overflow: ellipsis; word-break: break-all;}
+.txtBre{ word-break: break-all!important;}
+/*颜色 */
+.c0{ color: #000!important;}.c2{ color: #222!important;}.c3{ color: #333!important;}.c4{ color: #444!important;}.c5{ color: #555!important;}.c6{ color: #666!important;}.c7{ color: #777!important;}.c8{ color: #888!important;}.c9{ color: #999!important;}.c10{ color: #aaa!important;}.c11{ color: #bbb!important;}.c12{ color: #ccc!important;}.c13{ color: #ddd!important;}.c14{ color: #eee!important;}.c15{ color: #FFF!important;}
+
+.cPct16{ color: #232823;}/*深  彩色灰 默认的字体颜色 */
+.cPct49{color: #7b7e7b!important;}/* 浅 彩色灰*/
+
+/*背景*/
+.Bg0{ background-color: #000!important;}.Bg1{ background-color: #111!important;}.Bg2{ background-color: #222!important;}.Bg3{ background-color: #333!important;}.Bg4{ background-color: #444!important;}.Bg5{ background-color: #555!important;}.Bg6{ background-color: #666!important;}.Bg7{ background-color: #777!important;}.Bg8{ background-color: #888!important;}.Bg9{ background-color: #999!important;}.Bg10{ background-color: #aaa!important;}.Bg11{ background-color: #bbb!important;}.Bg12{ background-color: #ccc!important;}.Bg13{ background-color: #ddd!important;}.Bg14{ background-color: #eee!important;}.Bg15{ background-color: #fff!important;}
+.BgPct83{background-color: #d3d3d3 !important;}.BgPct87{background-color: #dfdfdf !important;}.BgPct92{background-color:#ebebeb !important;}.BgPct93{background-color:#eee !important;}.BgPct94{background-color:#f0f0f0!important;}.BgPct96{ background-color: #f4f4f4;}.BgPct97{ background-color: #f7f7f7;}.BgPct98{ background: #fafafa;}.BgFFF{ background: #fff!important;}
+
+/*半透明*/
+.opac_1{opacity: 0.1; }  .opac_2{ opacity: 0.2;}  .opac_3{ opacity: 0.3;}  .opac_4{ opacity: 0.4;}  .opac_5{ opacity: 0.5;}  .opac_6{ opacity: 0.6;}  .opac_7{ opacity: 0.7;}  .opac_8{ opacity: 0.8;}  .opac_9{ opacity: 0.9;}  .opac_10{ opacity: 1;}
+/*黑色半透明 颜色透明文字不透明*/
+/* 显示 定位 溢出 浮动 对齐 鼠标指针 居中*/
+.inline{ display: inline !important;}.inlineB{ display: inline-block !important;}.block{ display: block !important;}.tableCell{ display: table-cell!important;}
+.hide{display:none !important;}  .show{display:block !important;}
+.posR{ position:relative !important;}  .posA{ position: absolute !important;}.posF{ position: fixed!important;}
+.overHide{overflow:hidden !important;} .overVis{ overflow: visible!important;}
+.floatL{float:left !important;}.floatR{float:right !important;}.floatN{ float: none !important;}
+.clearfix{*zoom:1;}  .clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+.verT{vertical-align:top;} .verM{vertical-align: middle;} .verB{vertical-align:bottom;}  .verBaseL{vertical-align:baseline;}.ver0{ vertical-align: 0;}
+.marAuto{ margin: 0 auto;}
+/*
+* 宽度设置 单位百分比||rem   12分栏设置 || 百分比设置（2% 4% ……100%）
+*
+*/
+.wFull{width:100% !important;}.wAuto{ width: auto!important;}
+.col_1, .col_2, .col_3, .col_4, .col_5, .col_6, .col_7, .col_8, .col_9, .col_10, .col_11, .col_12 {  float: left;   }
+.col_1{ width: 8.33333333% !important; } .col_2{ width: 16.66666667% !important; }.col_3{ width: 25% !important;  }.col_4{ width: 33.33333333% !important; }.col_5{ width: 41.66666667% !important; }.col_6{ width: 50% !important; }  .col_7{ width: 58.33333333% !important; }.col_8{ width: 66.66666667% !important; }.col_9{ width: 75% !important;}.col_10{width: 83.33333333% !important;}.col_11{width: 91.66666667% !important;}.col_12{width: 100% !important;}
+.hFull{height:100% !important;} .hAuto{ height: auto!important;}
+
+/*弹性布局
+父亲使用的class:
+    .flex
+    .flexJust_ard ( 弹性盒子元素会平均地分布在行里，两端保留子元素与子元素之间间距大小的一半)
+    .flexJust_bet(两端对齐，中间空白平分)
+直接孩子使用:
+    .flex_1
+*/
+.flex{ display: -webkit-box;  display: -webkit-flex;  display: flex;}/* 父级display:flex */
+.flexJust_ard{ -webkit-justify-content:space-around;  justify-content:space-around;}
+.flexJust_bet{ -webkit-box-pack: justify;  -webkit-justify-content: space-between;  -ms-flex-pack:justify ;  justify-content: space-between;}/*两端对齐*/
+.flex_1{ -webkit-box-flex: 1;  -webkit-flex: 1;  flex: 1;}/* 直接孩子 flex:1 */
+.flex_2{ -webkit-box-flex: 2;  -webkit-flex: 2;  flex: 2;}
+
+

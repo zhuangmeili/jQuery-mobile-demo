@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/common/public.css">
+    <link rel="stylesheet" href="../css/common/animate.css">
+    <style type="text/css">
+        html, body {  position: relative;  height: 100%;  }
+        .d_Head{ height: 2rem; background:#2096f9; position: fixed; top: 0; left: 0; z-index: 99; width: 100%;  }
+        .d_Head h2{ color: #fff; text-align: center; line-height: 2rem; font-size:1rem; }
+        .d_Body{ position: absolute; width: 100%; height: 100%; left: 0; top: 0; padding-top: 2rem;background: #fff; overflow: hidden;  }
+
+        .d_BodyCon{ height: 100%; position: relative; overflow: hidden;}
+        .d_BodyPage{ position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: #fff; overflow: hidden;}
+        .d_BodyPage.cur{  z-index: 2; }
+        .d_BodyPage.next{ z-index: 3;  }/*表示下一个 */
+        .d_BodyPage.pre{ z-index: 3;  }
+        .d_BodyPage1_imgCon{ width: 100%; height:16rem; position: relative; }
+        .d_BodyPage1_imgCon img{ width: 100%; height: 100%;}
+
+
+
+
+        .d_BodyPage1_txtCon { position: relative; padding: .2rem .5rem;}
+        .d_BodyPage1_txtCon  .txtTitle{ font-size: 1rem; text-overflow: ellipsis; line-height: 2rem; white-space: nowrap; overflow: hidden;}
+        .d_BodyPage1_txtCon  .txtPrice{ font-size: 0.7rem; }
+        .d_BodyPage1_txtCon  .priceNumber{ color: #ff7300;  font-size: 1rem;}
+        .d_BodyPage1_txtCon  .txtOher{ margin-top: 0.5rem; padding-top:0.5rem; font-size: 0.7rem;color: #999; line-height: 1rem;
+            border-top: 1px solid #ddd;  }
+
+      .d_commonArow{ position: absolute; left: 50%; bottom: 1rem; width: 1.4rem; height: 0.7rem;z-index: 99; margin-left: -0.7rem;
+            -webkit-animation:d_comArowAnimate 1.5s infinite ease-in-out;-moz-animation:d_comArowAnimate 1.5s infinite ease-in-out;animation:d_comArowAnimate 1.5s infinite ease-in-out
+        }
+        .d_commonArow .arowLeft,.d_commonArow .arowRight{ display: inline-block; width: .8rem; height: .25rem; background: #fff; border-radius:0 0.1rem 0.1rem 0; -webkit-border-radius:0 0.1rem 0.1rem 0;
+            box-shadow:1px -1px 1px rgba(0,0,0,0.5);  }
+        .d_commonArow .arowLeft{  position: absolute; left: 0; top:  0;transform:rotate(130deg);-webkit-transform:rotate(130deg); }
+        .d_commonArow .arowRight{ position: absolute; left: .4rem; top: 0; -webkit-transform:rotate(50deg);transform:rotate(50deg); }
+
+        @-webkit-keyframes d_ImgeAnimate1 {
+            0%{opacity:0;left: -100%; top: -100%;}
+            100%{opacity:1;left:0; top: 0;}
+        }
+        @-webkit-keyframes d_comArowAnimate{
+            0%,30%{opacity:0;-webkit-transform:translate(0,1rem)}
+            60%{opacity:1;-webkit-transform:translate(0,0)}
+            100%{opacity:0;-webkit-transform:translate(0,-1rem)}
+        }
+
+        @-moz-keyframes d_comArowAnimate{
+            0%,30%{opacity:0;-moz-transform:translate(0,1rem)}
+            60%{opacity:1;-moz-transform:translate(0,0)}
+            100%{opacity:0;-moz-transform:translate(0,-1rem)}
+        }
+        @keyframes d_comArowAnimate{
+            0%,30%{opacity:0;transform:translate(0,1rem)}
+            60%{opacity:1;transform:translate(0,0)}
+            100%{opacity:0;transform:translate(0,-1rem)}
+        }
+        /* page1*/
+        .page_1{ background: #fff;}
+        .page_1 img{  position: absolute; left: -100%; top:-100%;  }
+        .page_1.cur img{left: 0; top:0;  -webkit-animation: d_ImgeAnimate1 1s ease-in-out;  }
+        .page_1.cur .slideInLeft { animation-delay:1s;  }
+        .page_1.cur .fadeIn{ animation-delay:2s; }
+        /*page2*/
+        .page_2{background: #efefef   }
+        .page_2.cur .zoomIn{  }
+        .page_2.cur .rollIn{ animation-delay: 1s;}
+
+        .page_3{background: #fff3f3 }
+        .page_3.cur .d_BodyPage1_imgCon{ animation-delay: .4s; }
+        .page_3.cur .flipInX{ animation-delay: 1.4s; }
+
+        .page_4{ background:#f3fdff }
+        .page_4.cur .d_BodyPage1_imgCon{ animation-delay: 0.2s;}
+        .page_4.cur .d_BodyPage1_txtCon{ animation-delay: 1.2s;  }
+
+    </style>
+</head>
+<body>
+<header class="d_Head">
+    <h2>商品展示</h2>
+</header>
+<div class="d_Body">
+    <div class="d_BodyCon ">
+        <!--  一个section是一个page 图片文字 展示区域 -->
+        <section class="d_BodyPage cur page_1" >
+            <div class="d_BodyPage1_imgCon">
+                <img src="../fodder/test1.jpg" alt="产品展示">
+            </div>
+            <div class="d_BodyPage1_txtCon ">
+                <div class="animated slideInLeft">
+                    <h4 class="txtTitle ">
+                        婚庆促销青花瓷回礼礼盒装 婚庆促销青花瓷回礼礼盒装
+                    </h4>
+                    <p class="txtPrice">
+                        价格 <span class="priceNumber">2569</span>元/个
+                    </p>
+                </div>
+
+                <ul class="txtOher animated fadeIn">
+                    <li>运费 买家承担运费</li>
+                    <li>成交 0个</li>
+                    <li>发货 浙江省 杭州市 建德市</li>
+                    <li>认证服务</li>
+                    <li>发货期</li>
+                    <li>服务方式</li>
+                    <li>运费 买家承担运费</li>
+                </ul>
+            </div>
+        </section>
+        <!-- 第二屏幕 -->
+        <section class="d_BodyPage page_2">
+            <div class="d_BodyPage1_imgCon animated zoomIn">
+                <img class="animated wobble" src="../fodder/test2.jpg" alt="产品展示">
+            </div>
+            <div class="d_BodyPage1_txtCon">
+                <h4 class="txtTitle animated rollIn ">
+                    我是第二屏幕
+                    婚庆促销青花瓷回礼礼盒装 婚庆促销青花瓷回礼礼盒装
+                </h4>
+            </div>
+        </section>
+        <!-- 第三屏幕 -->
+        <section class="d_BodyPage page_3 ">
+            <div class="d_BodyPage1_imgCon  animated fadeInLeft">
+                <img src="../fodder/test3.jpg" alt="产品展示">
+            </div>
+            <div class="d_BodyPage1_txtCon">
+                <h4 class="txtTitle animated flipInX">
+                    我是第三屏幕
+                    婚庆促销青花瓷回礼礼盒装 婚庆促销青花瓷回礼礼盒装
+                </h4>
+            </div>
+        </section>
+        <!-- 第四屏幕 -->
+        <section class="d_BodyPage page_4" >
+            <div class="d_BodyPage1_imgCon animated rollIn">
+                <img src="../fodder/banner1.jpg" alt="产品展示">
+            </div>
+            <div class="d_BodyPage1_txtCon animated bounceIn ">
+                <h4 class="txtTitle">
+                    我是第4   屏幕
+                    婚庆促销
+                </h4>
+            </div>
+        </section>
+    </div>
+</div>
+
+<div class="d_commonArow">
+    <span class="arowLeft"></span>
+    <span class="arowRight"></span>
+</div>
+</body>
+<script type="text/javascript" src="../js/common/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../js/common/flexable.js"></script>
+<script type="text/javascript">
+
+$(function () {
+    var startY=0;
+    var endY=0;
+    var disY=0;
+    var len=$(".d_BodyPage").length;
+    var curPage=0;//默认显示第一个
+    var nextPage=curPage+1;//下一页
+    var prePage=(curPage-1+len)%len;
+    var height=$(".d_BodyPage").outerHeight(true);
+    var maxMove=Math.floor(height/4) ;
+    var $cur=$(".d_BodyPage").eq(curPage);
+    var $next=$(".d_BodyPage").eq(nextPage);
+    var $pre=$(".d_BodyPage").eq(prePage);
+    var isMove=false;
+    var startTime=0;
+    var endTime=0;
+    function getY(e) {
+        var touch=e.originalEvent.targetTouches[0];
+        return touch.pageY;
+    }
+    $(".d_BodyPage").on("touchstart",function (e) {
+        startTime=(new Date()).getTime();
+        startY=getY(e);
+        $next.css({"top":height+"px"});
+        isMove=true;
+        $next.addClass("next").siblings(".d_BodyPage").removeClass("next");
+        $pre.addClass("pre").siblings("").removeClass("pre");
+        $pre.css({"top":-height+"px"});
+        e.preventDefault();
+    });
+    $(document).on("touchmove",function (e) {
+        if(!isMove){
+            return false;
+        }
+        endY=getY(e);
+        disY=endY-startY;
+        //console.log(disY+"  ,  top:"+(height+disY)  );
+        if(disY<0){
+            //情况一  手势向下滑动
+            $next.css({top:(height+disY)+"px"});
+        }else{
+            //情况一  手势向上滑动
+            $pre.css({top:-(height-disY)+"px"});
+        }
+        e.preventDefault();
+    });
+    $(document).on("touchend",function (e) {
+        if(!isMove){
+            return false;
+        }
+        isMove=false;
+        endTime=(new Date()).getTime();
+        var speed=Math.abs(startY-endY)/(endTime-startTime);
+        //console.log(speed);
+        //情况一 手指向下滑动
+        if(startY-endY>0){
+            //向下滚动一屏幕
+            if(startY -endY>maxMove || speed>0.4){
+                $next.animate({top:"0"},200,function () {
+                    //next运动到顶部改变cur 以及 next的指向的
+                    prePage=curPage;//改变pre为当前的page
+                    curPage++;
+                    if(curPage==len){
+                        curPage=0;
+                    }
+                    nextPage=curPage+1;
+                    if(nextPage==len){
+                        nextPage=0;
+                    }
+                    $pre.removeClass("pre");
+                    $cur.removeClass("cur");
+                    $cur.addClass("pre");
+                    $next.addClass("cur").removeClass("next");
+                    $pre=$cur;
+                    $cur=$next;
+                    $next=$(".d_BodyPage").eq(nextPage);
+                    $next.css({"top":height+"px"});
+                    $pre.css({"top":-height+"px"});
+                    $next.addClass("next");
+                });
+            }else{
+                $next.animate({top:height+"px"},50);
+            }
+        }
+        //情况二 手指向上滑动
+        if(endY-startY>0){
+            if(endY-startY>maxMove || speed>0.4){
+                $pre.animate({top:"0"},200,function () {
+                    nextPage=curPage;//改变next为当前的page
+                    curPage--;
+                    if(curPage<0){
+                        curPage=len-1;
+                    }
+                    prePage=curPage-1;
+                    if(prePage<0){
+                        prePage=len-1;
+                    }
+                    $pre.removeClass("pre");
+                    $cur.removeClass("cur");
+                    $pre.addClass("cur").removeClass("pre");
+                    $cur.addClass("next");
+                    $next=$cur;
+                    $cur=$pre;
+                    $pre=$(".d_BodyPage").eq(prePage);
+                    $pre.css({"top":-height+"px"});
+                    $next.css({"top":height+"px"});
+                    $pre.addClass("pre");
+                });
+            }else{
+                //不发生切换页面
+                $pre.animate({top:-height+"px"},50);
+            }
+        }
+        //$(document).off("touchmove");
+        //$(document).off("touchend");
+        e.preventDefault();
+    });
+
+
+    //===============================
+
+});
+
+</script>
+
+</html>
